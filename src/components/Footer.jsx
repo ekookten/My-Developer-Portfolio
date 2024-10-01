@@ -1,19 +1,15 @@
-import React from "react";
+import React from 'react';
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer>
-      <p>&copy; 2024 - Erkan Okten's React Portfolio</p>
-      <p>
-        <a href="https://github.com/ekookten">GitHub</a> |
-        <a href="https://www.linkedin.com/in/erkan-okten-7a8577316/">
-          {" "}
-          LinkedIn
-        </a>{" "}
-        |
-      </p>
+    <footer className="footer">
+      <div className="content has-text-centered">
+        <p>
+          <strong>Portfolio</strong> by Erkan Okten. Built with React and Bulma.
+        </p>
+      </div>
     </footer>
   );
-}
+};
 
 export default Footer;

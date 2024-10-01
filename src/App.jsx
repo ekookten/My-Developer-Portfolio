@@ -1,25 +1,27 @@
-import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import AboutMe from './pages/AboutMe';
-import Portfolio from './pages/Portfolio';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NotFound from './pages/NotFound';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<AboutMe />} />
-        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="*" element={<NotFound />} /> {/* Handle unmatched routes */}
       </Routes>
       <Footer />
     </Router>
   );
-}
+};
 
 export default App;
